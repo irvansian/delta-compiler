@@ -1,0 +1,10 @@
+
+<program> ::= {<statement>}
+<statement> ::= <assignment> | <declaration>
+<assignment> ::= <identifier> "=" <expression> ";"
+<declaration> ::= "var" <identifier> ["=" <expression>] ";"
+<expression> ::= <term> {("+" | "-") <term>}
+<term> ::= <factor> {("*" | "/") <factor>}
+<factor> ::= <number> | <identifier> | "(" <expression> ")"
+<number> ::= <digit> {<digit>}
+<identifier> ::= <letter> {<letter> | <digit> | "_"}
