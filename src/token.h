@@ -25,10 +25,13 @@ enum TokenType {
     BIT_AND, BIT_OR, BIT_XOR, BIT_NOT, LEFT_SHIFT, RIGHT_SHIFT,
 
     // mbuh
-    COLON, DOT, WHITESPACE,
+    COLON, DOT, WHITESPACE, LP, RP,
 
     // comments
-    COMMENT
+    COMMENT,
+
+    //eof
+    EOF
 };
 
 struct Token {

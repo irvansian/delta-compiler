@@ -1,8 +1,6 @@
 
 <program> ::= {<statement>}
-<statement> ::= <assignment> | <declaration>
-<assignment> ::= <identifier> "=" <expression> ";"
-<declaration> ::= "var" <identifier> ["=" <expression>] ";"
+<statement> ::= <identifier> "=" <expression>
 <expression> ::= <term> {("+" | "-") <term>}
 <term> ::= <factor> {("*" | "/") <factor>}
 <factor> ::= <number> | <identifier> | "(" <expression> ")"

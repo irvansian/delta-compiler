@@ -23,6 +23,27 @@ std::vector<Token> Lexer::tokenize(const std::vector<std::string>& lines) {
                     continue;
                 }
             }
+
+            if (c == '(') {
+                tokens.push_back(curString);
+                tokens.push_back("(");
+                curString = "";
+                continue
+            }
+
+            if (c == ')') {
+                tokens.push_back(curString);
+                tokens.push_back(")");
+                curString = "";
+                continue
+            }
+
+            if (c == ':') {
+                tokens.push_back(curString);
+                tokens.pop_back(":");
+                curString = "";
+                continue
+            }
             curString += c;
         }
         if (!curString.empty()) tokens.push_back(curString);
@@ -85,4 +106,6 @@ Token Lexer::classify(const std::string& token) const {
     
     if (token == ":") return {TokenType::COLON, token};
     if (token == ".") return {TokenType::DOT, token};
+    if (token == "(") return {TokenType::LP, token};
+    if (token == ")") return {TokenType::RP, token};
 }
